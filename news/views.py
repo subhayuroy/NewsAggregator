@@ -13,4 +13,9 @@ def scrape(request):
     content = session.get(url, verify=False).content
     soup = BSoup(content, "html.parser")
     News = soup.find_all('div', {"class": "curation-module__item"})
+    for article in News:
+        main = article.find_all('a')[0]
+        link = main['href']
+        image_src = str(main.find('img')['srcset']).split(" ")[-4]
+        title = main['title']
     return redirect("../")
