@@ -18,4 +18,9 @@ def scrape(request):
         link = main['href']
         image_src = str(main.find('img')['srcset']).split(" ")[-4]
         title = main['title']
+        new_headline = HeadLine()
+        new_headline.title = title
+        new_headline.url = link
+        new_headline.image = image_src
+        new_headline.save()
     return redirect("../")
