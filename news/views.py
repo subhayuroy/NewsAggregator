@@ -1,9 +1,9 @@
-from django.shortcuts import render, redirect
-
-# Create your views here.
 import requests
+from django.shortcuts import render, redirect
 from bs4 import BeautifulSoup as BSoup
-from news.models import HeadLine
+from news.models import Headline
+
+requests.packages.urllib3.disable_warnings()
 
 def scrape(request):
   session = requests.Session()
@@ -18,7 +18,7 @@ def scrape(request):
     link = main['href']
     image_src = str(main.find('img')['srcset']).split(" ")[-4]
     title = main['title']
-    new_headline = HeadLine()
+    new_headline = Headline()
     new_headline.title = title
     new_headline.url = link
     new_headline.image = image_src
@@ -26,7 +26,7 @@ def scrape(request):
   return redirect("../")
 
 def news_list(request):
-    headlines = HeadLine.objects.all()[::-1]
+    headlines = Headline.objects.all()[::-1]
     context = {
         'object_list': headlines,
     }
