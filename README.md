@@ -1,4 +1,4 @@
-# NewsAggregator
+<h1 align="center">NewsAggregator</h1>
 <h3 align="center">What is a News Aggregator?</h3>
 It is a web application which aggregates data (news articles) from multiple websites. Then presents the data in one location.
 
@@ -23,6 +23,7 @@ So, our news aggregator will work in 3 steps:
 So, that’s how our web app will work.
 
 <h1 align="center">How to access this project?</h1>
+
 1. Push this git command in your command line:
 `git@github.com:subhayuroy/NewsAggregator.git`
 
