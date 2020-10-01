@@ -1,4 +1,7 @@
 <h1 align="center">NewsAggregator</h1>
+<p align="center"><img alt="GitHub" src="https://img.shields.io/github/license/subhayuroy/NewsAggregator?style=plastic"></p>
+
+
 <h3 align="center">What is a News Aggregator?</h3>
 It is a web application which aggregates data (news articles) from multiple websites. Then presents the data in one location.
 
